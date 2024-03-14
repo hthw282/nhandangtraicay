@@ -147,7 +147,7 @@ if img_file_buffer is not None:
             # Create a 4D blob from a frame.
             inpWidth = mywidth if mywidth else frameWidth
             inpHeight = myheight if myheight else frameHeight
-            blob = cv.dnn.blobFromImage(frame, size=(inpWidth, inpHeight), swapRB=True, ddepth=cv2.CV_8U)
+            blob = cv2.dnn.blobFromImage(frame, size=(inpWidth, inpHeight), swapRB=True, ddepth=cv2.CV_8U)
 
             # Run a model
             st.session_state["Net"].setInput(blob, scalefactor=scale, mean=mean)
